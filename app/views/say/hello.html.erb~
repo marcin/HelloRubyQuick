@@ -1,12 +1,13 @@
 <h1>Hello from Rails!</h1>
 <p>It is now <%= @time %></p>
+
 <p>
 	Time to say
 	<%= link_to "Goodbye", say_goodbye_path %>!
 </p>
 
-<p>
-	<% @files.each do |file| %>
-		file name is: <%= file %>
+<ul>
+	<% @files.each_with_index do |file, id| %>
+		<li>file name nr <%= id+1 %> is: <%= file %></li>
 	<% end %>
-</p>
+</ul>

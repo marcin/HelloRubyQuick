@@ -1,16 +1,5 @@
-
-class SayController < ApplicationController
-  
-  def hello
-  	@time = Time.now
-  	@files = quick_sort(Dir.glob '*')
-  	#@files = ['Ania', 'Lala', 'Maciek', 'Buba']
-  	#files = (Dir.glob '*').sort { |a, b| a.upcase <=> b.upcase }
-  end
-
-  def goodbye
-  end
-
+module SaySorter
+	
 	#returns array of (distinct) strings sorted lexicographically
 	def quick_sort str_arr
 		return str_arr if str_arr.length <= 1
@@ -28,5 +17,5 @@ class SayController < ApplicationController
 		end
 		quick_sort(less) + [str_arr[pivot]] + quick_sort(greater)
 	end
-
+	
 end
